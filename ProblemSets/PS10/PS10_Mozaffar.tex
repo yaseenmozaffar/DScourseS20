@@ -1,0 +1,27 @@
+\documentclass{article} \usepackage[utf8]{inputenc} \title{PS10 
+Mozaffar} \author{Yaseen Mozaffar } \date{April 2020} \usepackage{array} 
+\begin{document} \maketitle \begin{center} \section{5 Tribes Table} 
+\renewcommand{\arraystretch}{1.5} \begin{tabular}{ 
+|m{6em}|m{4.2em}|m{3.2em}|m{6em}|m{3em}|m{3em}|m{6em}| }
+\hline
+ & \textbf{Tree} & \textbf{Log Regress} & \textbf{Neural Net} & 
+\textbf{Naive Bayes} & \textbf{KNN} & \textbf{SVM} \\
+ \hline
+ \textbf{Optimal Parameters} & Split: 47 \newline Bucket: 9 \newline 
+cp:.0102 & lambda: 0.181 \newline alpha: 0.027 & size: 8 \newline decay: 
+0.362 & N/A & k: 30 & cost: 2 Gamma: 0.25 \\
+ \hline
+ \textbf{Out of Sample F1} & 0.895 & 0.576 & 0.606 & 0.624 & 0.648 & 
+0.903\\
+ \hline
+ \textbf{Out of Sample G Mean} & 0.665 & 0.665 & 0.696 & 0.734 & 0.741 & 
+0.742\\
+ \hline \end{tabular} \section{Model Comparison} For both F1 and 
+G-Means, a higher score represents a more accurate model. Therefore, we 
+can see that, if evaluating off of F1, the models rank as follows: \\ 1: 
+SVM \\ 2: Tree Model \\ 3: K Nearest Neighbors \\ 4: Naive Bayes \\ 5: 
+Neural Network \\ 6: Logistic Regression\\ \vspace{5mm} %5mm vertical 
+space \\ Using G means, the models rank this way:\\ 1: SVM \\ 2: KNN \\ 
+3: Naive Bayes \\ 4: Neural Network \\ 5: Logistic Regression\\ 5: Tree 
+Model \end{center}
+\end{document}
