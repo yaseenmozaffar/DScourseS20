@@ -1,256 +1,516 @@
 \documentclass[12pt,english]{article} \usepackage{mathptmx} 
 \usepackage{color} \usepackage[dvipsnames]{xcolor} 
-\definecolor{darkblue}{RGB}{0.,0.,139.} \usepackage[top=1in, bottom=1in, 
-left=1in, right=1in]{geometry} \usepackage[authoryear]{natbib} 
-\usepackage{url} \usepackage{booktabs} \usepackage{graphicx} 
-\usepackage{pdflscape} \usepackage[unicode=true,pdfusetitle,
+\definecolor{darkblue}{RGB}{0.,0.,139.} \usepackage[top=1in, 
+bottom=1in, left=1in, right=1in]{geometry} \usepackage{url} 
+\usepackage{booktabs} \usepackage{graphicx} \usepackage{pdflscape} 
+\usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
  breaklinks=true,pdfborder={0 0 0},backref=false,
  colorlinks,citecolor=black,filecolor=black,
  linkcolor=black,urlcolor=black]
- {hyperref} \usepackage[all]{hypcap} % Links point to top of image, 
-builds on hyperref \usepackage{breakurl} % Allows urls to wrap, 
-including hyperref \linespread{2} \begin{document} \begin{singlespace} 
-\title{Price of a Life: An Exploration of Pharmaceutical Pricing 
-Policies\thanks{This paper appears as a part of my Independent Graduate 
-Research project}} \end{singlespace} \author{Yaseen 
-Mozaffar\thanks{Department of Economics, University of Oklahoma.\ 
-E-mail~address:~\href{mailto:y.mozaffar@ou.edu}{y.mozaffar@ou.edu}}} % 
-\date{\today} \date{April 12, 2020} \maketitle \begin{abstract} 
-\begin{singlespace} A short summary of what question the project 
-answers, what methods are used, and any policy (or business) 
-implications from the findings. \end{singlespace} \end{abstract} 
-\vfill{} \pagebreak{} \section{Introduction}\label{sec:intro} Part of 
-the challenge inherent in Economics is that not every subject of 
-interest can be precisely thought of in terms of money and utility. 
-Chief among such subjects is the economic value of human life. This 
-paper seeks not to assign a value to life but to demonstrate through a 
-case study that, in certain situations, data and economic theory can be 
-used to estimate how a particular policy reflects the value placed on 
-life by the policymaker. The case study in question is the pricing 
-choices made by the manufacturers of life-saving, patent-protected 
-drugs. This eliminates many confounding elements that would muddle the 
-conclusions that could be properly drawn from the analysis. By drawing 
-from monopolies, I eliminate competitive market pressure as a pricing 
-factor and, by limiting the analysis to life-saving drugs, I am able to 
-identify the relationship between pricing and human life as directly as 
-possible. Recognizing that the supply side of a market includes much 
-more than the firms, this paper does not assign any share of 
-responsibility to any particular actor. [as an example, corporations 
-have a responsibility to their shareholders that they remain profitable, 
-so that'll influence their decisions. however, that means that their 
-shareholders have made a decision to maintain profitability of their 
-investments, potentially at the cost of human life. Because there's no 
-feasible way to identify all of those factors, I'm limiting the 
-conclusions drawn to "somewhere in the supply side of the market" rather 
-than specifying the firm or the shareholders or anyone else. Should I 
-explain that here or put it somewhere else?] Following the introduction, 
-this paper proceeds with a review of the literature surrounding the 
-historic value of human life in economic terms, as well as 
-pharmaceutical pricing practices. The next section will detail the data 
-used to construct this analysis, followed by an explanation of the 
-empirical methods, the analysis of the results of those methods, and the 
-larger policy recommendations that come about as a result. 
-\section{Literature Review}\label{sec:litreview} [I want to hold out on 
-my lit review for a bit until my grad research project takes a bit of a 
-more definite direction. Much of the lit review will likely be drawn 
-from the analysis done on sources used in the other project] 
+ {hyperref} \linespread{2} \begin{document} \title{Price of a Life: 
+An Exploration of Pharmaceutical Pricing Policies\thanks{This paper 
+appears as a part of my Independent Graduate Research project}} 
+\author{Yaseen Mozaffar\thanks{Department of Economics, University of 
+Oklahoma.\ 
+E-mail~address:~\href{mailto:y.mozaffar@ou.edu}{y.mozaffar@ou.edu}}} 
+% \date{\today} \date{April 12, 2020} \maketitle \begin{abstract} A 
+short summary of what question the project answers, what methods are 
+used, and any policy (or business) implications from the findings. 
+\end{abstract} \vfill{} \pagebreak{} 
+\section{Introduction}\label{sec:intro} Part of the challenge 
+inherent in Economics is that not every subject of interest can be 
+precisely thought of in terms of money and utility. Chief among such 
+subjects is the economic value of human life. This paper seeks not to 
+assign a value to life but to demonstrate through a case study that, 
+in certain situations, data and economic theory can be used to 
+estimate how a particular policy reflects the value placed on life by 
+the policymaker. The case study in question is the pricing choices 
+made by the manufacturers of life-saving, patent-protected drugs. 
+This eliminates many confounding elements that would muddle the 
+conclusions that could be properly drawn from the analysis. By 
+drawing from monopolies, I eliminate competitive market pressure as a 
+pricing factor and, by limiting the analysis to life-saving drugs, I 
+am able to identify the relationship between pricing and human life 
+as directly as possible. Recognizing that the supply side of a market 
+includes much more than the firms, this paper does not assign any 
+share of responsibility to any particular actor. [as an example, 
+corporations have a responsibility to their shareholders that they 
+remain profitable, so that'll influence their decisions. however, 
+that means that their shareholders have made a decision to maintain 
+profitability of their investments, potentially at the cost of human 
+life. Because there's no feasible way to identify all of those 
+factors, I'm limiting the conclusions drawn to "somewhere in the 
+supply side of the market" rather than specifying the firm or the 
+shareholders or anyone else. Should I explain that here or put it 
+somewhere else?] Following the introduction, this paper proceeds with 
+a review of the literature surrounding the historic value of human 
+life in economic terms, as well as pharmaceutical pricing practices. 
+The next section will detail the data used to construct this 
+analysis, followed by an explanation of the empirical methods, the 
+analysis of the results of those methods, and the larger policy 
+recommendations that come about as a result. \section{Literature 
+Review}\label{sec:litreview} [I want to hold out on my lit review for 
+a bit until my grad research project takes a bit of a more definite 
+direction. Much of the lit review will likely be drawn from the 
+analysis done on sources used in the other project] 
 \section{Data}\label{sec:data} FDA Patent Expiry data will be used to 
 identify which drugs will be included in my analysis, as well as a 
-preliminary analysis to determine what kind of effect patent expiry and, 
-by extension, patents themselves, have on pricing policy. The Federal 
-Medicaid pricing database will, of course, be used to track the price of 
-drugs over time. Iterations of this database exist over many years, so 
-it can be used across the timeframe of the analysis. I'll also look at 
-financial report summaries for the drug manufacturers to ensure that, by 
-annual profits and dividends paid out, that there exists the capacity 
-for these companies to price lower if they so choose. Any company that 
-doesn't meet that requirement would be removed from the analysis, 
-because I'm trying to isolate decision-makers with as much free rein as 
-possible in their pricing decisions. CDC death and mortality data will 
-be used to draw the degree to which a particular drug can lower 
-mortality for different disease. This will be combined with CDC data on 
-the number of people afflicted with a condition in the US to calculate a 
-value for how much life would theoretically be saved if a particular 
-drug was to be made available to anyone. (more details in the methods 
-section) \section{Empirical Methods}\label{sec:methods} In the interest 
-of making the most conservative estimate possible, I am going to 
-evaluate only the effect of drug pricing on the 27 million uninsured 
-americans. (because the argument can be made that companies can price 
-higher because insurance companies can pay for it). So what we're 
-looking for is the amount of uninsured people afflicted with a 
-particular condition who would be likely unable to afford that drug at 
-its current price point. Using that data and the differential between 
-the status quo and a situation in the case where the drugs are priced at 
-production cost, I can estimate how much money has been saved at the 
-cost of how many lives There will be an equation to make this clearer. 
-[There will be a discussion here on monopolies and how the monopoly 
-model informs this model] Model currentPrice: Price of a drug Afflicted: 
-how many uninsured people have a particular disease (if exact number is 
-unavailable, can be estimated) volumeSold: units of a drug sold in a 
-year productionCost: cost to produce a drug canAfford: Estimate of the 
-amount of people able to afford that drug in the status quo drugPremium: 
-Basically this is a value for how much a particular drug lowers the 
-chance of death from a condition 
-livesSaved:(Afflicted-canAfford)*drugPremium is a probabilistic value of 
-how many lives would theoretically be saved if the drug was available 
-freely profits: currentPrice*volumeSold-productionCost 
-profits/livesSaved reflects how many dollars the company has gained per 
-person killed by the decision to price above production cost. This will 
-be calculated at the company level \section{Research 
+preliminary analysis to determine what kind of effect patent expiry 
+and, by extension, patents themselves, have on pricing policy. The 
+Federal Medicaid pricing database will, of course, be used to track 
+the price of drugs over time. Iterations of this database exist over 
+many years, so it can be used across the timeframe of the analysis. 
+I'll also look at financial report summaries for the drug 
+manufacturers to ensure that, by annual profits and dividends paid 
+out, that there exists the capacity for these companies to price 
+lower if they so choose. Any company that doesn't meet that 
+requirement would be removed from the analysis, because I'm trying to 
+isolate decision-makers with as much free rein as possible in their 
+pricing decisions. CDC death and mortality data will be used to draw 
+the degree to which a particular drug can lower mortality for 
+different disease. This will be combined with CDC data on the number 
+of people afflicted with a condition in the US to calculate a value 
+for how much life would theoretically be saved if a particular drug 
+was to be made available to anyone. (more details in the methods 
+section) \section{Empirical Methods}\label{sec:methods} In the 
+interest of making the most conservative estimate possible, I am 
+going to evaluate only the effect of drug pricing on the 27 million 
+uninsured americans. (because the argument can be made that companies 
+can price higher because insurance companies can pay for it). So what 
+we're looking for is the amount of uninsured people afflicted with a 
+particular condition who would be likely unable to afford that drug 
+at its current price point. Using that data and the differential 
+between the status quo and a situation in the case where the drugs 
+are priced at production cost, I can estimate how much money has been 
+saved at the cost of how many lives There will be an equation to make 
+this clearer. [There will be a discussion here on monopolies and how 
+the monopoly model informs this model] Model currentPrice: Price of a 
+drug Afflicted: how many uninsured people have a particular disease 
+(if exact number is unavailable, can be estimated) volumeSold: units 
+of a drug sold in a year productionCost: cost to produce a drug 
+canAfford: Estimate of the amount of people able to afford that drug 
+in the status quo drugPremium: Basically this is a value for how much 
+a particular drug lowers the chance of death from a condition 
+livesSaved:(Afflicted-canAfford)*drugPremium this is a probabilistic 
+value of how many lives would theoretically be saved if the drug was 
+available freely profits: currentPrice*volumeSold-productionCost 
+profits/livesSaved reflects how many dollars the company has gained 
+per person killed by the decision to price above production cost. 
+This will be calculated at the company level \section{Research 
 Findings}\label{sec:results} Yeah this isn't done yet 
-\section{Conclusion}\label{sec:conclusion} Basically the thesis of this 
-argument isn't really about healthcare or pharmaceuticals or the evils 
-of capitalism or something like that. What I try to show here is that 
-policymakers/firms/individuals don't get to pretend that "economics" 
-absolves responsibility of moral value. If I'm able to trawl through 
-datasets and put together a simple model to estimate the tradeoff 
-between lives and profits implicitly made by these pricing decisions, 
-then firms have the capacity to do the same, with much more precision. 
-Therefore, making decisions in terms of only dollar amounts is a choice, 
-whether implicitly or explicitly. There are a number of limitations on 
-the particular conclusions drawn here (e.g. that executive salaries and 
-dividends aren't necessarily elective decisions, because they need to 
-attract talent and funding). However, the overall argument remains 
-unaffected; whether or not policymakers and firms think in these 
-particular terms, the tradeoff is inevitably being made. The only policy 
-recommendation is that values are interrogated and reflected in 
-decision-making. If pharmaceutical executives was to be confronted with 
-the value placed on life by their price decisions and business continued 
-as usual, that would be their right. The only difference would be that 
-they will have lost the opportunity to pretend they haven't thought 
-about the impact that they have. It is my firm belief that if lives were 
-explicitly valued, and decisions at every level were to be made in such 
-terms, then the corporate structure of our world would look differently. 
-But maybe that's wishful thinking. \vfill \pagebreak{} 
-\begin{spacing}{1.0} \bibliographystyle{jpe} 
-\bibliography{References.bib} \addcontentsline{toc}{section}{References} 
-\end{spacing} \end{document}\documentclass[12pt,english]{article} 
-\usepackage{mathptmx} \usepackage{color} \usepackage[dvipsnames]{xcolor} 
-\definecolor{darkblue}{RGB}{0.,0.,139.} \usepackage[top=1in, bottom=1in, 
-left=1in, right=1in]{geometry} \usepackage[authoryear]{natbib} 
-\usepackage{url} \usepackage{booktabs} \usepackage{graphicx} 
-\usepackage{pdflscape} \usepackage[unicode=true,pdfusetitle,
+\section{Conclusion}\label{sec:conclusion} Basically the thesis of 
+this argument isn't really about healthcare or pharmaceuticals or the 
+evils of capitalism or something like that. What I try to show here 
+is that policymakers/firms/individuals don't get to pretend that 
+"economics" absolves responsibility of moral value. If I'm able to 
+trawl through datasets and put together a simple model to estimate 
+the tradeoff between lives and profits implicitly made by these 
+pricing decisions, then firms have the capacity to do the same, with 
+much more precision. Therefore, making decisions in terms of only 
+dollar amounts is a choice, whether implicitly or explicitly. There 
+are a number of limitations on the particular conclusions drawn here 
+(e.g. that executive salaries and dividends aren't necessarily 
+elective decisions, because they need to attract talent and funding). 
+However, the overall argument remains unaffected; whether or not 
+policymakers and firms think in these particular terms, the tradeoff 
+is inevitably being made. The only policy recommendation is that 
+values are interrogated and reflected in decision-making. If 
+pharmaceutical executives was to be confronted with the value placed 
+on life by their price decisions and business continued as usual, 
+that would be their right. The only difference would be that they 
+will have lost the opportunity to pretend they haven't thought about 
+the impact that they have. It is my firm belief that if lives were 
+explicitly valued, and decisions at every level were to be made in 
+such terms, then the corporate structure of our world would look 
+differently. But maybe that's wishful thinking. \vfill \pagebreak{} 
+\bibliographystyle{jpe} \bibliography{References.bib} 
+\addcontentsline{toc}{section}{References} 
+\end{document}\documentclass[12pt,english]{article} 
+\usepackage{mathptmx} \usepackage{color} 
+\usepackage[dvipsnames]{xcolor} 
+\definecolor{darkblue}{RGB}{0.,0.,139.} \usepackage[top=1in, 
+bottom=1in, left=1in, right=1in]{geometry} \usepackage{url} 
+\usepackage{booktabs} \usepackage{graphicx} \usepackage{pdflscape} 
+\usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
  breaklinks=true,pdfborder={0 0 0},backref=false,
  colorlinks,citecolor=black,filecolor=black,
  linkcolor=black,urlcolor=black]
- {hyperref} \usepackage[all]{hypcap} % Links point to top of image, 
-builds on hyperref \usepackage{breakurl} % Allows urls to wrap, 
-including hyperref \linespread{2} \begin{document} \begin{singlespace} 
-\title{Price of a Life: An Exploration of Pharmaceutical Pricing 
-Policies\thanks{This paper appears as a part of my Independent Graduate 
-Research project}} \end{singlespace} \author{Yaseen 
-Mozaffar\thanks{Department of Economics, University of Oklahoma.\ 
-E-mail~address:~\href{mailto:y.mozaffar@ou.edu}{y.mozaffar@ou.edu}}} % 
-\date{\today} \date{April 12, 2020} \maketitle \begin{abstract} 
-\begin{singlespace} A short summary of what question the project 
-answers, what methods are used, and any policy (or business) 
-implications from the findings. \end{singlespace} \end{abstract} 
-\vfill{} \pagebreak{} \section{Introduction}\label{sec:intro} Part of 
-the challenge inherent in Economics is that not every subject of 
-interest can be precisely thought of in terms of money and utility. 
-Chief among such subjects is the economic value of human life. This 
-paper seeks not to assign a value to life but to demonstrate through a 
-case study that, in certain situations, data and economic theory can be 
-used to estimate how a particular policy reflects the value placed on 
-life by the policymaker. The case study in question is the pricing 
-choices made by the manufacturers of life-saving, patent-protected 
-drugs. This eliminates many confounding elements that would muddle the 
-conclusions that could be properly drawn from the analysis. By drawing 
-from monopolies, I eliminate competitive market pressure as a pricing 
-factor and, by limiting the analysis to life-saving drugs, I am able to 
-identify the relationship between pricing and human life as directly as 
-possible. Recognizing that the supply side of a market includes much 
-more than the firms, this paper does not assign any share of 
-responsibility to any particular actor. [as an example, corporations 
-have a responsibility to their shareholders that they remain profitable, 
-so that'll influence their decisions. however, that means that their 
-shareholders have made a decision to maintain profitability of their 
-investments, potentially at the cost of human life. Because there's no 
-feasible way to identify all of those factors, I'm limiting the 
-conclusions drawn to "somewhere in the supply side of the market" rather 
-than specifying the firm or the shareholders or anyone else. Should I 
-explain that here or put it somewhere else?] Following the introduction, 
-this paper proceeds with a review of the literature surrounding the 
-historic value of human life in economic terms, as well as 
-pharmaceutical pricing practices. The next section will detail the data 
-used to construct this analysis, followed by an explanation of the 
-empirical methods, the analysis of the results of those methods, and the 
-larger policy recommendations that come about as a result. 
-\section{Literature Review}\label{sec:litreview} [I want to hold out on 
-my lit review for a bit until my grad research project takes a bit of a 
-more definite direction. Much of the lit review will likely be drawn 
-from the analysis done on sources used in the other project] 
+ {hyperref} \linespread{2} \begin{document} \title{Price of a Life: 
+An Exploration of Pharmaceutical Pricing Policies\thanks{This paper 
+appears as a part of my Independent Graduate Research project}} 
+\author{Yaseen Mozaffar\thanks{Department of Economics, University of 
+Oklahoma.\ 
+E-mail~address:~\href{mailto:y.mozaffar@ou.edu}{y.mozaffar@ou.edu}}} 
+% \date{\today} \date{April 12, 2020} \maketitle \begin{abstract} A 
+short summary of what question the project answers, what methods are 
+used, and any policy (or business) implications from the findings. 
+\end{abstract} \vfill{} \pagebreak{} 
+\section{Introduction}\label{sec:intro} Part of the challenge 
+inherent in Economics is that not every subject of interest can be 
+precisely thought of in terms of money and utility. Chief among such 
+subjects is the economic value of human life. This paper seeks not to 
+assign a value to life but to demonstrate through a case study that, 
+in certain situations, data and economic theory can be used to 
+estimate how a particular policy reflects the value placed on life by 
+the policymaker. The case study in question is the pricing choices 
+made by the manufacturers of life-saving, patent-protected drugs. 
+This eliminates many confounding elements that would muddle the 
+conclusions that could be properly drawn from the analysis. By 
+drawing from monopolies, I eliminate competitive market pressure as a 
+pricing factor and, by limiting the analysis to life-saving drugs, I 
+am able to identify the relationship between pricing and human life 
+as directly as possible. Recognizing that the supply side of a market 
+includes much more than the firms, this paper does not assign any 
+share of responsibility to any particular actor. [as an example, 
+corporations have a responsibility to their shareholders that they 
+remain profitable, so that'll influence their decisions. however, 
+that means that their shareholders have made a decision to maintain 
+profitability of their investments, potentially at the cost of human 
+life. Because there's no feasible way to identify all of those 
+factors, I'm limiting the conclusions drawn to "somewhere in the 
+supply side of the market" rather than specifying the firm or the 
+shareholders or anyone else. Should I explain that here or put it 
+somewhere else?] Following the introduction, this paper proceeds with 
+a review of the literature surrounding the historic value of human 
+life in economic terms, as well as pharmaceutical pricing practices. 
+The next section will detail the data used to construct this 
+analysis, followed by an explanation of the empirical methods, the 
+analysis of the results of those methods, and the larger policy 
+recommendations that come about as a result. \section{Literature 
+Review}\label{sec:litreview} [I want to hold out on my lit review for 
+a bit until my grad research project takes a bit of a more definite 
+direction. Much of the lit review will likely be drawn from the 
+analysis done on sources used in the other project] 
 \section{Data}\label{sec:data} FDA Patent Expiry data will be used to 
 identify which drugs will be included in my analysis, as well as a 
-preliminary analysis to determine what kind of effect patent expiry and, 
-by extension, patents themselves, have on pricing policy. The Federal 
-Medicaid pricing database will, of course, be used to track the price of 
-drugs over time. Iterations of this database exist over many years, so 
-it can be used across the timeframe of the analysis. I'll also look at 
-financial report summaries for the drug manufacturers to ensure that, by 
-annual profits and dividends paid out, that there exists the capacity 
-for these companies to price lower if they so choose. Any company that 
-doesn't meet that requirement would be removed from the analysis, 
-because I'm trying to isolate decision-makers with as much free rein as 
-possible in their pricing decisions. CDC death and mortality data will 
-be used to draw the degree to which a particular drug can lower 
-mortality for different disease. This will be combined with CDC data on 
-the number of people afflicted with a condition in the US to calculate a 
-value for how much life would theoretically be saved if a particular 
-drug was to be made available to anyone. (more details in the methods 
-section) \section{Empirical Methods}\label{sec:methods} In the interest 
-of making the most conservative estimate possible, I am going to 
-evaluate only the effect of drug pricing on the 27 million uninsured 
-americans. (because the argument can be made that companies can price 
-higher because insurance companies can pay for it). So what we're 
-looking for is the amount of uninsured people afflicted with a 
-particular condition who would be likely unable to afford that drug at 
-its current price point. Using that data and the differential between 
-the status quo and a situation in the case where the drugs are priced at 
-production cost, I can estimate how much money has been saved at the 
-cost of how many lives There will be an equation to make this clearer. 
-[There will be a discussion here on monopolies and how the monopoly 
-model informs this model] Model currentPrice: Price of a drug Afflicted: 
-how many uninsured people have a particular disease (if exact number is 
-unavailable, can be estimated) volumeSold: units of a drug sold in a 
-year productionCost: cost to produce a drug canAfford: Estimate of the 
-amount of people able to afford that drug in the status quo drugPremium: 
-Basically this is a value for how much a particular drug lowers the 
-chance of death from a condition 
-livesSaved:(Afflicted-canAfford)*drugPremium is a probabilistic value of 
-how many lives would theoretically be saved if the drug was available 
-freely profits: currentPrice*volumeSold-productionCost 
-profits/livesSaved reflects how many dollars the company has gained per 
-person killed by the decision to price above production cost. This will 
-be calculated at the company level \section{Research 
+preliminary analysis to determine what kind of effect patent expiry 
+and, by extension, patents themselves, have on pricing policy. The 
+Federal Medicaid pricing database will, of course, be used to track 
+the price of drugs over time. Iterations of this database exist over 
+many years, so it can be used across the timeframe of the analysis. 
+I'll also look at financial report summaries for the drug 
+manufacturers to ensure that, by annual profits and dividends paid 
+out, that there exists the capacity for these companies to price 
+lower if they so choose. Any company that doesn't meet that 
+requirement would be removed from the analysis, because I'm trying to 
+isolate decision-makers with as much free rein as possible in their 
+pricing decisions. CDC death and mortality data will be used to draw 
+the degree to which a particular drug can lower mortality for 
+different disease. This will be combined with CDC data on the number 
+of people afflicted with a condition in the US to calculate a value 
+for how much life would theoretically be saved if a particular drug 
+was to be made available to anyone. (more details in the methods 
+section) \section{Empirical Methods}\label{sec:methods} In the 
+interest of making the most conservative estimate possible, I am 
+going to evaluate only the effect of drug pricing on the 27 million 
+uninsured americans. (because the argument can be made that companies 
+can price higher because insurance companies can pay for it). So what 
+we're looking for is the amount of uninsured people afflicted with a 
+particular condition who would be likely unable to afford that drug 
+at its current price point. Using that data and the differential 
+between the status quo and a situation in the case where the drugs 
+are priced at production cost, I can estimate how much money has been 
+saved at the cost of how many lives There will be an equation to make 
+this clearer. [There will be a discussion here on monopolies and how 
+the monopoly model informs this model] Model currentPrice: Price of a 
+drug Afflicted: how many uninsured people have a particular disease 
+(if exact number is unavailable, can be estimated) volumeSold: units 
+of a drug sold in a year productionCost: cost to produce a drug 
+canAfford: Estimate of the amount of people able to afford that drug 
+in the status quo drugPremium: Basically this is a value for how much 
+a particular drug lowers the chance of death from a condition 
+livesSaved:(Afflicted-canAfford)*drugPremium this is a probabilistic 
+value of how many lives would theoretically be saved if the drug was 
+available freely profits: currentPrice*volumeSold-productionCost 
+profits/livesSaved reflects how many dollars the company has gained 
+per person killed by the decision to price above production cost. 
+This will be calculated at the company level \section{Research 
 Findings}\label{sec:results} Yeah this isn't done yet 
-\section{Conclusion}\label{sec:conclusion} Basically the thesis of this 
-argument isn't really about healthcare or pharmaceuticals or the evils 
-of capitalism or something like that. What I try to show here is that 
-policymakers/firms/individuals don't get to pretend that "economics" 
-absolves responsibility of moral value. If I'm able to trawl through 
-datasets and put together a simple model to estimate the tradeoff 
-between lives and profits implicitly made by these pricing decisions, 
-then firms have the capacity to do the same, with much more precision. 
-Therefore, making decisions in terms of only dollar amounts is a choice, 
-whether implicitly or explicitly. There are a number of limitations on 
-the particular conclusions drawn here (e.g. that executive salaries and 
-dividends aren't necessarily elective decisions, because they need to 
-attract talent and funding). However, the overall argument remains 
-unaffected; whether or not policymakers and firms think in these 
-particular terms, the tradeoff is inevitably being made. The only policy 
-recommendation is that values are interrogated and reflected in 
-decision-making. If pharmaceutical executives was to be confronted with 
-the value placed on life by their price decisions and business continued 
-as usual, that would be their right. The only difference would be that 
-they will have lost the opportunity to pretend they haven't thought 
-about the impact that they have. It is my firm belief that if lives were 
-explicitly valued, and decisions at every level were to be made in such 
-terms, then the corporate structure of our world would look differently. 
-But maybe that's wishful thinking. \vfill \pagebreak{} 
-\begin{spacing}{1.0} \bibliographystyle{jpe} 
-\bibliography{References.bib} \addcontentsline{toc}{section}{References} 
-\end{spacing}
+\section{Conclusion}\label{sec:conclusion} Basically the thesis of 
+this argument isn't really about healthcare or pharmaceuticals or the 
+evils of capitalism or something like that. What I try to show here 
+is that policymakers/firms/individuals don't get to pretend that 
+"economics" absolves responsibility of moral value. If I'm able to 
+trawl through datasets and put together a simple model to estimate 
+the tradeoff between lives and profits implicitly made by these 
+pricing decisions, then firms have the capacity to do the same, with 
+much more precision. Therefore, making decisions in terms of only 
+dollar amounts is a choice, whether implicitly or explicitly. There 
+are a number of limitations on the particular conclusions drawn here 
+(e.g. that executive salaries and dividends aren't necessarily 
+elective decisions, because they need to attract talent and funding). 
+However, the overall argument remains unaffected; whether or not 
+policymakers and firms think in these particular terms, the tradeoff 
+is inevitably being made. The only policy recommendation is that 
+values are interrogated and reflected in decision-making. If 
+pharmaceutical executives was to be confronted with the value placed 
+on life by their price decisions and business continued as usual, 
+that would be their right. The only difference would be that they 
+will have lost the opportunity to pretend they haven't thought about 
+the impact that they have. It is my firm belief that if lives were 
+explicitly valued, and decisions at every level were to be made in 
+such terms, then the corporate structure of our world would look 
+differently. But maybe that's wishful thinking. \vfill \pagebreak{} 
+\bibliographystyle{jpe} \bibliography{References.bib} 
+\addcontentsline{toc}{section}{References} 
+\end{document}\documentclass[12pt,english]{article} 
+\usepackage{mathptmx} \usepackage{color} 
+\usepackage[dvipsnames]{xcolor} 
+\definecolor{darkblue}{RGB}{0.,0.,139.} \usepackage[top=1in, 
+bottom=1in, left=1in, right=1in]{geometry} \usepackage{url} 
+\usepackage{booktabs} \usepackage{graphicx} \usepackage{pdflscape} 
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref} \linespread{2} \begin{document} \title{Price of a Life: 
+An Exploration of Pharmaceutical Pricing Policies\thanks{This paper 
+appears as a part of my Independent Graduate Research project}} 
+\author{Yaseen Mozaffar\thanks{Department of Economics, University of 
+Oklahoma.\ 
+E-mail~address:~\href{mailto:y.mozaffar@ou.edu}{y.mozaffar@ou.edu}}} 
+% \date{\today} \date{April 12, 2020} \maketitle \begin{abstract} A 
+short summary of what question the project answers, what methods are 
+used, and any policy (or business) implications from the findings. 
+\end{abstract} \vfill{} \pagebreak{} 
+\section{Introduction}\label{sec:intro} Part of the challenge 
+inherent in Economics is that not every subject of interest can be 
+precisely thought of in terms of money and utility. Chief among such 
+subjects is the economic value of human life. This paper seeks not to 
+assign a value to life but to demonstrate through a case study that, 
+in certain situations, data and economic theory can be used to 
+estimate how a particular policy reflects the value placed on life by 
+the policymaker. The case study in question is the pricing choices 
+made by the manufacturers of life-saving, patent-protected drugs. 
+This eliminates many confounding elements that would muddle the 
+conclusions that could be properly drawn from the analysis. By 
+drawing from monopolies, I eliminate competitive market pressure as a 
+pricing factor and, by limiting the analysis to life-saving drugs, I 
+am able to identify the relationship between pricing and human life 
+as directly as possible. Recognizing that the supply side of a market 
+includes much more than the firms, this paper does not assign any 
+share of responsibility to any particular actor. [as an example, 
+corporations have a responsibility to their shareholders that they 
+remain profitable, so that'll influence their decisions. however, 
+that means that their shareholders have made a decision to maintain 
+profitability of their investments, potentially at the cost of human 
+life. Because there's no feasible way to identify all of those 
+factors, I'm limiting the conclusions drawn to "somewhere in the 
+supply side of the market" rather than specifying the firm or the 
+shareholders or anyone else. Should I explain that here or put it 
+somewhere else?] Following the introduction, this paper proceeds with 
+a review of the literature surrounding the historic value of human 
+life in economic terms, as well as pharmaceutical pricing practices. 
+The next section will detail the data used to construct this 
+analysis, followed by an explanation of the empirical methods, the 
+analysis of the results of those methods, and the larger policy 
+recommendations that come about as a result. \section{Literature 
+Review}\label{sec:litreview} [I want to hold out on my lit review for 
+a bit until my grad research project takes a bit of a more definite 
+direction. Much of the lit review will likely be drawn from the 
+analysis done on sources used in the other project] 
+\section{Data}\label{sec:data} FDA Patent Expiry data will be used to 
+identify which drugs will be included in my analysis, as well as a 
+preliminary analysis to determine what kind of effect patent expiry 
+and, by extension, patents themselves, have on pricing policy. The 
+Federal Medicaid pricing database will, of course, be used to track 
+the price of drugs over time. Iterations of this database exist over 
+many years, so it can be used across the timeframe of the analysis. 
+I'll also look at financial report summaries for the drug 
+manufacturers to ensure that, by annual profits and dividends paid 
+out, that there exists the capacity for these companies to price 
+lower if they so choose. Any company that doesn't meet that 
+requirement would be removed from the analysis, because I'm trying to 
+isolate decision-makers with as much free rein as possible in their 
+pricing decisions. CDC death and mortality data will be used to draw 
+the degree to which a particular drug can lower mortality for 
+different disease. This will be combined with CDC data on the number 
+of people afflicted with a condition in the US to calculate a value 
+for how much life would theoretically be saved if a particular drug 
+was to be made available to anyone. (more details in the methods 
+section) \section{Empirical Methods}\label{sec:methods} In the 
+interest of making the most conservative estimate possible, I am 
+going to evaluate only the effect of drug pricing on the 27 million 
+uninsured americans. (because the argument can be made that companies 
+can price higher because insurance companies can pay for it). So what 
+we're looking for is the amount of uninsured people afflicted with a 
+particular condition who would be likely unable to afford that drug 
+at its current price point. Using that data and the differential 
+between the status quo and a situation in the case where the drugs 
+are priced at production cost, I can estimate how much money has been 
+saved at the cost of how many lives There will be an equation to make 
+this clearer. [There will be a discussion here on monopolies and how 
+the monopoly model informs this model] Model currentPrice: Price of a 
+drug Afflicted: how many uninsured people have a particular disease 
+(if exact number is unavailable, can be estimated) volumeSold: units 
+of a drug sold in a year productionCost: cost to produce a drug 
+canAfford: Estimate of the amount of people able to afford that drug 
+in the status quo drugPremium: Basically this is a value for how much 
+a particular drug lowers the chance of death from a condition 
+livesSaved:(Afflicted-canAfford)*drugPremium this is a probabilistic 
+value of how many lives would theoretically be saved if the drug was 
+available freely profits: currentPrice*volumeSold-productionCost 
+profits/livesSaved reflects how many dollars the company has gained 
+per person killed by the decision to price above production cost. 
+This will be calculated at the company level \section{Research 
+Findings}\label{sec:results} Yeah this isn't done yet 
+\section{Conclusion}\label{sec:conclusion} Basically the thesis of 
+this argument isn't really about healthcare or pharmaceuticals or the 
+evils of capitalism or something like that. What I try to show here 
+is that policymakers/firms/individuals don't get to pretend that 
+"economics" absolves responsibility of moral value. If I'm able to 
+trawl through datasets and put together a simple model to estimate 
+the tradeoff between lives and profits implicitly made by these 
+pricing decisions, then firms have the capacity to do the same, with 
+much more precision. Therefore, making decisions in terms of only 
+dollar amounts is a choice, whether implicitly or explicitly. There 
+are a number of limitations on the particular conclusions drawn here 
+(e.g. that executive salaries and dividends aren't necessarily 
+elective decisions, because they need to attract talent and funding). 
+However, the overall argument remains unaffected; whether or not 
+policymakers and firms think in these particular terms, the tradeoff 
+is inevitably being made. The only policy recommendation is that 
+values are interrogated and reflected in decision-making. If 
+pharmaceutical executives was to be confronted with the value placed 
+on life by their price decisions and business continued as usual, 
+that would be their right. The only difference would be that they 
+will have lost the opportunity to pretend they haven't thought about 
+the impact that they have. It is my firm belief that if lives were 
+explicitly valued, and decisions at every level were to be made in 
+such terms, then the corporate structure of our world would look 
+differently. But maybe that's wishful thinking. \vfill \pagebreak{} 
+\bibliographystyle{jpe} \bibliography{References.bib} 
+\addcontentsline{toc}{section}{References} 
+\end{document}\documentclass[12pt,english]{article} 
+\usepackage{mathptmx} \usepackage{color} 
+\usepackage[dvipsnames]{xcolor} 
+\definecolor{darkblue}{RGB}{0.,0.,139.} \usepackage[top=1in, 
+bottom=1in, left=1in, right=1in]{geometry} \usepackage{url} 
+\usepackage{booktabs} \usepackage{graphicx} \usepackage{pdflscape} 
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref} \linespread{2} \begin{document} \title{Price of a Life: 
+An Exploration of Pharmaceutical Pricing Policies\thanks{This paper 
+appears as a part of my Independent Graduate Research project}} 
+\author{Yaseen Mozaffar\thanks{Department of Economics, University of 
+Oklahoma.\ 
+E-mail~address:~\href{mailto:y.mozaffar@ou.edu}{y.mozaffar@ou.edu}}} 
+% \date{\today} \date{April 12, 2020} \maketitle \begin{abstract} A 
+short summary of what question the project answers, what methods are 
+used, and any policy (or business) implications from the findings. 
+\end{abstract} \vfill{} \pagebreak{} 
+\section{Introduction}\label{sec:intro} Part of the challenge 
+inherent in Economics is that not every subject of interest can be 
+precisely thought of in terms of money and utility. Chief among such 
+subjects is the economic value of human life. This paper seeks not to 
+assign a value to life but to demonstrate through a case study that, 
+in certain situations, data and economic theory can be used to 
+estimate how a particular policy reflects the value placed on life by 
+the policymaker. The case study in question is the pricing choices 
+made by the manufacturers of life-saving, patent-protected drugs. 
+This eliminates many confounding elements that would muddle the 
+conclusions that could be properly drawn from the analysis. By 
+drawing from monopolies, I eliminate competitive market pressure as a 
+pricing factor and, by limiting the analysis to life-saving drugs, I 
+am able to identify the relationship between pricing and human life 
+as directly as possible. Recognizing that the supply side of a market 
+includes much more than the firms, this paper does not assign any 
+share of responsibility to any particular actor. [as an example, 
+corporations have a responsibility to their shareholders that they 
+remain profitable, so that'll influence their decisions. however, 
+that means that their shareholders have made a decision to maintain 
+profitability of their investments, potentially at the cost of human 
+life. Because there's no feasible way to identify all of those 
+factors, I'm limiting the conclusions drawn to "somewhere in the 
+supply side of the market" rather than specifying the firm or the 
+shareholders or anyone else. Should I explain that here or put it 
+somewhere else?] Following the introduction, this paper proceeds with 
+a review of the literature surrounding the historic value of human 
+life in economic terms, as well as pharmaceutical pricing practices. 
+The next section will detail the data used to construct this 
+analysis, followed by an explanation of the empirical methods, the 
+analysis of the results of those methods, and the larger policy 
+recommendations that come about as a result. \section{Literature 
+Review}\label{sec:litreview} [I want to hold out on my lit review for 
+a bit until my grad research project takes a bit of a more definite 
+direction. Much of the lit review will likely be drawn from the 
+analysis done on sources used in the other project] 
+\section{Data}\label{sec:data} FDA Patent Expiry data will be used to 
+identify which drugs will be included in my analysis, as well as a 
+preliminary analysis to determine what kind of effect patent expiry 
+and, by extension, patents themselves, have on pricing policy. The 
+Federal Medicaid pricing database will, of course, be used to track 
+the price of drugs over time. Iterations of this database exist over 
+many years, so it can be used across the timeframe of the analysis. 
+I'll also look at financial report summaries for the drug 
+manufacturers to ensure that, by annual profits and dividends paid 
+out, that there exists the capacity for these companies to price 
+lower if they so choose. Any company that doesn't meet that 
+requirement would be removed from the analysis, because I'm trying to 
+isolate decision-makers with as much free rein as possible in their 
+pricing decisions. CDC death and mortality data will be used to draw 
+the degree to which a particular drug can lower mortality for 
+different disease. This will be combined with CDC data on the number 
+of people afflicted with a condition in the US to calculate a value 
+for how much life would theoretically be saved if a particular drug 
+was to be made available to anyone. (more details in the methods 
+section) \section{Empirical Methods}\label{sec:methods} In the 
+interest of making the most conservative estimate possible, I am 
+going to evaluate only the effect of drug pricing on the 27 million 
+uninsured americans. (because the argument can be made that companies 
+can price higher because insurance companies can pay for it). So what 
+we're looking for is the amount of uninsured people afflicted with a 
+particular condition who would be likely unable to afford that drug 
+at its current price point. Using that data and the differential 
+between the status quo and a situation in the case where the drugs 
+are priced at production cost, I can estimate how much money has been 
+saved at the cost of how many lives There will be an equation to make 
+this clearer. [There will be a discussion here on monopolies and how 
+the monopoly model informs this model] Model currentPrice: Price of a 
+drug Afflicted: how many uninsured people have a particular disease 
+(if exact number is unavailable, can be estimated) volumeSold: units 
+of a drug sold in a year productionCost: cost to produce a drug 
+canAfford: Estimate of the amount of people able to afford that drug 
+in the status quo drugPremium: Basically this is a value for how much 
+a particular drug lowers the chance of death from a condition 
+livesSaved:(Afflicted-canAfford)*drugPremium this is a probabilistic 
+value of how many lives would theoretically be saved if the drug was 
+available freely profits: currentPrice*volumeSold-productionCost 
+profits/livesSaved reflects how many dollars the company has gained 
+per person killed by the decision to price above production cost. 
+This will be calculated at the company level \section{Research 
+Findings}\label{sec:results} Yeah this isn't done yet 
+\section{Conclusion}\label{sec:conclusion} Basically the thesis of 
+this argument isn't really about healthcare or pharmaceuticals or the 
+evils of capitalism or something like that. What I try to show here 
+is that policymakers/firms/individuals don't get to pretend that 
+"economics" absolves responsibility of moral value. If I'm able to 
+trawl through datasets and put together a simple model to estimate 
+the tradeoff between lives and profits implicitly made by these 
+pricing decisions, then firms have the capacity to do the same, with 
+much more precision. Therefore, making decisions in terms of only 
+dollar amounts is a choice, whether implicitly or explicitly. There 
+are a number of limitations on the particular conclusions drawn here 
+(e.g. that executive salaries and dividends aren't necessarily 
+elective decisions, because they need to attract talent and funding). 
+However, the overall argument remains unaffected; whether or not 
+policymakers and firms think in these particular terms, the tradeoff 
+is inevitably being made. The only policy recommendation is that 
+values are interrogated and reflected in decision-making. If 
+pharmaceutical executives was to be confronted with the value placed 
+on life by their price decisions and business continued as usual, 
+that would be their right. The only difference would be that they 
+will have lost the opportunity to pretend they haven't thought about 
+the impact that they have. It is my firm belief that if lives were 
+explicitly valued, and decisions at every level were to be made in 
+such terms, then the corporate structure of our world would look 
+differently. But maybe that's wishful thinking. \vfill \pagebreak{} 
+\bibliographystyle{jpe} \bibliography{References.bib} 
+\addcontentsline{toc}{section}{References}
 \end{document}
