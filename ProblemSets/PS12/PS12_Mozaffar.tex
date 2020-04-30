@@ -1,0 +1,289 @@
+\documentclass{article} \usepackage[utf8]{inputenc} \title{PS 12} 
+\author{y.mozaffar } \date{April 2020} \usepackage{natbib} 
+\usepackage{graphicx} \begin{document} \maketitle \section{Problem 6} 
+[table on next page as Table 1] There are 684 observations, about 30 
+percent, that are missing the logwage variable. I would guess that this 
+would be MNAR missingness. Assuming this is self-reported data, it's 
+likely that those with higher wages would be more likely to report it. 
+\section{Problem 7} [table on next page as Table 2] Both mean and 
+stepwise imputation were far off the mark, implying that the missingness 
+was in fact not random. This is further corroborated by the fact that 
+the Heckit model, accounting for the non-randomness, was within 0.001 of 
+the true value of Beta 1. \section{Problem 12} [table on next page as 
+Table 3] The counterfactual is just barely lower than the original 
+probit model. This doesn't quite make sense to me because If two large 
+subsets of the dataset were now unable to join a union, you would think 
+the probability of a given person being in a union would be much smaller 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ \hline \\[-1.8ex] \end{tabular} 
+\end{table} \begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccc} \\[-1.8ex]\hline 
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ \cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{logwage} \\ \\[-1.8ex] & 
+\multicolumn{2}{c}{\textit{OLS}} & \textit{selection} \\ \\[-1.8ex] & 
+(1) & (2) & (3)\\ \hline \\[-1.8ex]
+ hgc & 0.058$^{***}$ & 0.058$^{***}$ & 0.092$^{***}$ \\
+  & (0.009) & (0.009) & (0.009) \\
+  & & & \\
+ union1 & 0.068 & 0.068 & 0.171$^{**}$ \\
+  & (0.073) & (0.073) & (0.074) \\
+  & & & \\
+ college1 & $-$0.079 & $-$0.079 & 0.108 \\
+  & (0.106) & (0.106) & (0.094) \\
+  & & & \\
+ exper & 0.016$^{**}$ & 0.016$^{**}$ & 0.051$^{***}$ \\
+  & (0.006) & (0.006) & (0.009) \\
+  & & & \\
+ I(exper$\hat{\mkern6mu}$2) & & & $-$0.002$^{**}$ \\
+  & & & (0.001) \\
+  & & & \\
+ Constant & 0.891$^{***}$ & 0.891$^{***}$ & 0.453$^{***}$ \\
+  & (0.112) & (0.112) & (0.112) \\
+  & & & \\ \hline \\[-1.8ex] Observations & 1,545 & 1,545 & 2,229 \\ 
+R$^{2}$ & 0.032 & 0.032 & \\ Adjusted R$^{2}$ & 0.029 & 0.029 & \\ Log 
+Likelihood & & & $-$1,802.229 \\ $\rho$ & & & $-$0.998$^{***}$ (0.002) 
+\\ Residual Std. Error (df = 1540) & 0.678 & 0.678 & \\ F Statistic (df 
+= 4; 1540) & 12.600$^{***}$ & 12.600$^{***}$ & \\ \hline \hline 
+\\[-1.8ex] \textit{Note:} & \multicolumn{3}{r}{$^{*}$p$<$0.1; 
+$^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ \end{tabular} \end{table} 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ predProbit & 2,229 & 0.237 & 0.407 & 0 
+& 0 & 0.3 & 1 \\ counterfact & 2,229 & 0.228 & 0.401 & 0 & 0 & 0.2 & 1 
+\\ \hline \\[-1.8ex] \end{tabular} \end{table} 
+\end{document}\documentclass{article} \usepackage[utf8]{inputenc} 
+\title{PS 12} \author{y.mozaffar } \date{April 2020} \usepackage{natbib} 
+\usepackage{graphicx} \begin{document} \maketitle \section{Problem 6} 
+[table on next page as Table 1] There are 684 observations, about 30 
+percent, that are missing the logwage variable. I would guess that this 
+would be MNAR missingness. Assuming this is self-reported data, it's 
+likely that those with higher wages would be more likely to report it. 
+\section{Problem 7} [table on next page as Table 2] Both mean and 
+stepwise imputation were far off the mark, implying that the missingness 
+was in fact not random. This is further corroborated by the fact that 
+the Heckit model, accounting for the non-randomness, was within 0.001 of 
+the true value of Beta 1. \section{Problem 12} [table on next page as 
+Table 3] The counterfactual is just barely lower than the original 
+probit model. This doesn't quite make sense to me because If two large 
+subsets of the dataset were now unable to join a union, you would think 
+the probability of a given person being in a union would be much smaller 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ \hline \\[-1.8ex] \end{tabular} 
+\end{table} \begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccc} \\[-1.8ex]\hline 
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ \cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{logwage} \\ \\[-1.8ex] & 
+\multicolumn{2}{c}{\textit{OLS}} & \textit{selection} \\ \\[-1.8ex] & 
+(1) & (2) & (3)\\ \hline \\[-1.8ex]
+ hgc & 0.058$^{***}$ & 0.058$^{***}$ & 0.092$^{***}$ \\
+  & (0.009) & (0.009) & (0.009) \\
+  & & & \\
+ union1 & 0.068 & 0.068 & 0.171$^{**}$ \\
+  & (0.073) & (0.073) & (0.074) \\
+  & & & \\
+ college1 & $-$0.079 & $-$0.079 & 0.108 \\
+  & (0.106) & (0.106) & (0.094) \\
+  & & & \\
+ exper & 0.016$^{**}$ & 0.016$^{**}$ & 0.051$^{***}$ \\
+  & (0.006) & (0.006) & (0.009) \\
+  & & & \\
+ I(exper$\hat{\mkern6mu}$2) & & & $-$0.002$^{**}$ \\
+  & & & (0.001) \\
+  & & & \\
+ Constant & 0.891$^{***}$ & 0.891$^{***}$ & 0.453$^{***}$ \\
+  & (0.112) & (0.112) & (0.112) \\
+  & & & \\ \hline \\[-1.8ex] Observations & 1,545 & 1,545 & 2,229 \\ 
+R$^{2}$ & 0.032 & 0.032 & \\ Adjusted R$^{2}$ & 0.029 & 0.029 & \\ Log 
+Likelihood & & & $-$1,802.229 \\ $\rho$ & & & $-$0.998$^{***}$ (0.002) 
+\\ Residual Std. Error (df = 1540) & 0.678 & 0.678 & \\ F Statistic (df 
+= 4; 1540) & 12.600$^{***}$ & 12.600$^{***}$ & \\ \hline \hline 
+\\[-1.8ex] \textit{Note:} & \multicolumn{3}{r}{$^{*}$p$<$0.1; 
+$^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ \end{tabular} \end{table} 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ predProbit & 2,229 & 0.237 & 0.407 & 0 
+& 0 & 0.3 & 1 \\ counterfact & 2,229 & 0.228 & 0.401 & 0 & 0 & 0.2 & 1 
+\\ \hline \\[-1.8ex] \end{tabular} \end{table} 
+\end{document}\documentclass{article} \usepackage[utf8]{inputenc} 
+\title{PS 12} \author{y.mozaffar } \date{April 2020} \usepackage{natbib} 
+\usepackage{graphicx} \begin{document} \maketitle \section{Problem 6} 
+[table on next page as Table 1] There are 684 observations, about 30 
+percent, that are missing the logwage variable. I would guess that this 
+would be MNAR missingness. Assuming this is self-reported data, it's 
+likely that those with higher wages would be more likely to report it. 
+\section{Problem 7} [table on next page as Table 2] Both mean and 
+stepwise imputation were far off the mark, implying that the missingness 
+was in fact not random. This is further corroborated by the fact that 
+the Heckit model, accounting for the non-randomness, was within 0.001 of 
+the true value of Beta 1. \section{Problem 12} [table on next page as 
+Table 3] The counterfactual is just barely lower than the original 
+probit model. This doesn't quite make sense to me because If two large 
+subsets of the dataset were now unable to join a union, you would think 
+the probability of a given person being in a union would be much smaller 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ \hline \\[-1.8ex] \end{tabular} 
+\end{table} \begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccc} \\[-1.8ex]\hline 
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ \cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{logwage} \\ \\[-1.8ex] & 
+\multicolumn{2}{c}{\textit{OLS}} & \textit{selection} \\ \\[-1.8ex] & 
+(1) & (2) & (3)\\ \hline \\[-1.8ex]
+ hgc & 0.058$^{***}$ & 0.058$^{***}$ & 0.092$^{***}$ \\
+  & (0.009) & (0.009) & (0.009) \\
+  & & & \\
+ union1 & 0.068 & 0.068 & 0.171$^{**}$ \\
+  & (0.073) & (0.073) & (0.074) \\
+  & & & \\
+ college1 & $-$0.079 & $-$0.079 & 0.108 \\
+  & (0.106) & (0.106) & (0.094) \\
+  & & & \\
+ exper & 0.016$^{**}$ & 0.016$^{**}$ & 0.051$^{***}$ \\
+  & (0.006) & (0.006) & (0.009) \\
+  & & & \\
+ I(exper$\hat{\mkern6mu}$2) & & & $-$0.002$^{**}$ \\
+  & & & (0.001) \\
+  & & & \\
+ Constant & 0.891$^{***}$ & 0.891$^{***}$ & 0.453$^{***}$ \\
+  & (0.112) & (0.112) & (0.112) \\
+  & & & \\ \hline \\[-1.8ex] Observations & 1,545 & 1,545 & 2,229 \\ 
+R$^{2}$ & 0.032 & 0.032 & \\ Adjusted R$^{2}$ & 0.029 & 0.029 & \\ Log 
+Likelihood & & & $-$1,802.229 \\ $\rho$ & & & $-$0.998$^{***}$ (0.002) 
+\\ Residual Std. Error (df = 1540) & 0.678 & 0.678 & \\ F Statistic (df 
+= 4; 1540) & 12.600$^{***}$ & 12.600$^{***}$ & \\ \hline \hline 
+\\[-1.8ex] \textit{Note:} & \multicolumn{3}{r}{$^{*}$p$<$0.1; 
+$^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ \end{tabular} \end{table} 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ predProbit & 2,229 & 0.237 & 0.407 & 0 
+& 0 & 0.3 & 1 \\ counterfact & 2,229 & 0.228 & 0.401 & 0 & 0 & 0.2 & 1 
+\\ \hline \\[-1.8ex] \end{tabular} \end{table} 
+\end{document}\documentclass{article} \usepackage[utf8]{inputenc} 
+\title{PS 12} \author{y.mozaffar } \date{April 2020} \usepackage{natbib} 
+\usepackage{graphicx} \begin{document} \maketitle \section{Problem 6} 
+[table on next page as Table 1] There are 684 observations, about 30 
+percent, that are missing the logwage variable. I would guess that this 
+would be MNAR missingness. Assuming this is self-reported data, it's 
+likely that those with higher wages would be more likely to report it. 
+\section{Problem 7} [table on next page as Table 2] Both mean and 
+stepwise imputation were far off the mark, implying that the missingness 
+was in fact not random. This is further corroborated by the fact that 
+the Heckit model, accounting for the non-randomness, was within 0.001 of 
+the true value of Beta 1. \section{Problem 12} [table on next page as 
+Table 3] The counterfactual is just barely lower than the original 
+probit model. This doesn't quite make sense to me because If two large 
+subsets of the dataset were now unable to join a union, you would think 
+the probability of a given person being in a union would be much smaller 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ \hline \\[-1.8ex] \end{tabular} 
+\end{table} \begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccc} \\[-1.8ex]\hline 
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ \cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{logwage} \\ \\[-1.8ex] & 
+\multicolumn{2}{c}{\textit{OLS}} & \textit{selection} \\ \\[-1.8ex] & 
+(1) & (2) & (3)\\ \hline \\[-1.8ex]
+ hgc & 0.058$^{***}$ & 0.058$^{***}$ & 0.092$^{***}$ \\
+  & (0.009) & (0.009) & (0.009) \\
+  & & & \\
+ union1 & 0.068 & 0.068 & 0.171$^{**}$ \\
+  & (0.073) & (0.073) & (0.074) \\
+  & & & \\
+ college1 & $-$0.079 & $-$0.079 & 0.108 \\
+  & (0.106) & (0.106) & (0.094) \\
+  & & & \\
+ exper & 0.016$^{**}$ & 0.016$^{**}$ & 0.051$^{***}$ \\
+  & (0.006) & (0.006) & (0.009) \\
+  & & & \\
+ I(exper$\hat{\mkern6mu}$2) & & & $-$0.002$^{**}$ \\
+  & & & (0.001) \\
+  & & & \\
+ Constant & 0.891$^{***}$ & 0.891$^{***}$ & 0.453$^{***}$ \\
+  & (0.112) & (0.112) & (0.112) \\
+  & & & \\ \hline \\[-1.8ex] Observations & 1,545 & 1,545 & 2,229 \\ 
+R$^{2}$ & 0.032 & 0.032 & \\ Adjusted R$^{2}$ & 0.029 & 0.029 & \\ Log 
+Likelihood & & & $-$1,802.229 \\ $\rho$ & & & $-$0.998$^{***}$ (0.002) 
+\\ Residual Std. Error (df = 1540) & 0.678 & 0.678 & \\ F Statistic (df 
+= 4; 1540) & 12.600$^{***}$ & 12.600$^{***}$ & \\ \hline \hline 
+\\[-1.8ex] \textit{Note:} & \multicolumn{3}{r}{$^{*}$p$<$0.1; 
+$^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ \end{tabular} \end{table} 
+\begin{table}[!htbp] \centering
+  \caption{}
+  \label{} \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline \hline \\[-1.8ex] Statistic & \multicolumn{1}{c}{N} & 
+\multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & 
+\multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & 
+\multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ \hline 
+\\[-1.8ex] logwage & 1,545 & 1.652 & 0.688 & $-$0.956 & 1.201 & 2.120 & 
+4.166 \\ hgc & 2,229 & 12.455 & 2.444 & 5 & 11 & 14 & 18 \\ exper & 
+2,229 & 6.435 & 4.867 & 0.000 & 2.452 & 9.778 & 25.000 \\ kids & 2,229 & 
+0.429 & 0.495 & 0 & 0 & 1 & 1 \\ predProbit & 2,229 & 0.237 & 0.407 & 0 
+& 0 & 0.3 & 1 \\ counterfact & 2,229 & 0.228 & 0.401 & 0 & 0 & 0.2 & 1 
+\\ \hline \\[-1.8ex] \end{tabular} \end{table}
+\end{document}
